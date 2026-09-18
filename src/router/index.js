@@ -32,6 +32,16 @@ const routes = [
     name: 'Add_employee',
     component: () => import('../views/Add_employee.vue')
   },
+     {
+    path: '/add_contact',
+    name: 'add_contact',
+    component: () => import('../views/Add_contact.vue')
+  },
+       {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/Contact.vue')
+  },
 ]
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

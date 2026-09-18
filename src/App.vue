@@ -1,20 +1,29 @@
 <template>
   <div>
-  <!--แสดงหน้าเมนูล-->
-<Navbar />
+
+<!--แสดงหน้าเมนูล-->
+   <Navbar />
+
+
 
 <!--แสดงหน้าเพจ-->
-  <router-view/>
-  </div>
+   <router-view/>
+
+<!--แสดง footer-->
+   <Footer />
+
+</div>
 
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
+import Footer from "./components/footer.vue";
+
 
 
 export default {
   name: "App",
-  components: { Navbar }
+  components: { Navbar,Footer}
 };
 </script>
