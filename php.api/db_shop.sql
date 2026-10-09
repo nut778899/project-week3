@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2026 at 06:35 AM
+-- Generation Time: Oct 09, 2026 at 07:01 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `contact_id` int(11) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `detail` text NOT NULL,
+  `fullname` varchar(150) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`contact_id`, `subject`, `detail`, `fullname`, `email`, `created_at`) VALUES
+(1, 'สอบถามข้อมูลการสมัครเรียน', 'ต้องการสอบถามรายละเอียดเกี่ยวกับการสมัครเรียน', 'สมชาย ใจดี', 'somchai@gmail.com', '2026-09-18 05:04:22'),
+(2, 'sadasd', 'asd', 'asd', 'asd', '2026-09-18 05:26:26'),
+(3, 'ซื้อของ', 'ชำรุด', 'ณัฐกิตติ์ ', 'aa@aa.com', '2026-09-18 05:28:58'),
+(4, 'sad', 'asd', 'asasd', 'asdas', '2026-10-09 03:34:31');
 
 -- --------------------------------------------------------
 
@@ -43,7 +68,7 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`customer_id`, `firstName`, `lastName`, `phone`, `username`, `password`) VALUES
 (00000001, 'มานะ', 'เด็กดี', '038756921', 'mana', '1234'),
 (00000002, 'มานี', 'ใจดี', '038756901', 'manee', '1234'),
-(00000003, 'hhh', 'bbbb', '33333', 'lkk', '$2y$10$XCzSyUwKZ6Pi6HCRFwxk8.n7HZSu93zWulhKntEm0NTGKqfaZMYLO');
+(00000003, 'www', 'www', 'www', 'www', '$2y$10$Q8N48j9Z.zt3yvrhfkyLGep1gJ/AHgfb5J4LiGThkYHM0.InI6GoW');
 
 -- --------------------------------------------------------
 
@@ -66,8 +91,9 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`emp_id`, `firstName`, `lastName`, `phone`, `username`, `password`) VALUES
 (000001, 'มีนา', 'มีเงิน', '038756000', 'mena', '1234'),
-(000002, 'ใจดี', 'เจได', '038756001', 'jaidee', '1234'),
-(000003, 'เตย', 'คนไม่ดี', '00000000', 'ไม่ดี', '$2y$10$rPMGa9.AE/9bH4vIoXVSZuZcUDAFm01PWko4AljfHhSblqumAz6ly');
+(000002, 'ใจดี222', 'เจได4', 'sad', 'qwww', '1234'),
+(000003, 'เจด', 'สดา', '1222', 'jadesada', '$2y$10$AgbMks0/R1LqQ09EJ7h8pee6BOZCqbuvxZwfeFHRScAM54fAVFZKG'),
+(000004, 'node', 'js', '123', 'vscode', '$2y$10$AuC3oLRImmXmdwve2VymLe7qyLNlUBR6arJTLciCJQixyA1fpz5Sm');
 
 -- --------------------------------------------------------
 
@@ -99,6 +125,12 @@ INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `i
 --
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`contact_id`);
+
+--
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
@@ -121,6 +153,12 @@ ALTER TABLE `products`
 --
 
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
@@ -130,7 +168,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `emp_id` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `emp_id` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `products`
